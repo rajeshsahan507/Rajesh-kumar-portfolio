@@ -529,12 +529,87 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Contact Section */
-        .contact-info {
+        /* Testimonials Section */
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .testimonial-card {
+            background: rgba(10, 14, 39, 0.8);
+            border: 1px solid var(--secondary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .testimonial-role {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--light);
+            opacity: 0.8;
+        }
+
+        /* Certifications Grid */
+        .certifications-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .cert-card {
+            background: rgba(0, 255, 65, 0.05);
+            border: 1px solid var(--secondary);
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 65, 0.2);
+        }
+
+        .cert-name {
+            color: var(--primary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-issuer {
+            font-size: 0.9rem;
+            color: var(--light);
+            opacity: 0.8;
         }
 
         .contact-card {
@@ -622,13 +697,14 @@
     <nav>
         <div class="nav-container">
             <div class="logo">&lt;RK /&gt;</div>
-            <ul class="nav-links">
+            <div class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -656,7 +732,7 @@
                 <div class="stat-label">Years Experience</div>
             </div>
             <div class="stat-card fade-in">
-                <div class="stat-number">500+</div>
+                <div class="stat-number">2500+</div>
                 <div class="stat-label">Security Assessments</div>
             </div>
             <div class="stat-card fade-in">
@@ -667,6 +743,14 @@
                 <div class="stat-number">$10K+</div>
                 <div class="stat-label">Bug Bounties Earned</div>
             </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <h2 class="section-title">About Me</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; line-height: 1.8;">
+            <p>As a seasoned Application Security Analyst with 5 years of expertise, I specialize in Web, API, and mobile thick client Vulnerability Assessment and Penetration Testing (VAPT). I excel in planning and executing security consulting engagements, collaborating with Project Managers to ensure project efficiency. I provide detailed weekly/monthly reports, stay updated on industry trends, and conduct proactive research on new vulnerabilities. Proficient in Application Security and Web Application Security, I bring a dynamic approach to securing digital environments through impactful assessments.</p>
         </div>
     </section>
 
@@ -687,10 +771,72 @@
                 <div class="achievement-card">
                     <div class="company-name">Fitbit</div>
                     <div class="vuln-type">API Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">May 2020</div>
                 </div>
                 <div class="achievement-card">
-                    <div class="company-name">20+ Others</div>
-                    <div class="vuln-type">Various Critical Findings</div>
+                    <div class="company-name">TripAdvisor</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Mar 2020</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Trello</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">May 2020</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Acorns</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">May 2020</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Takeaway</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Apr 2020</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Kenna Security</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Nov 2019</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Redox</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Nov 2019</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Mass-it</div>
+                    <div class="vuln-type">€50 Bounty Reward</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Mar 2020</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Sphero</div>
+                    <div class="vuln-type">$100 Bounty Reward</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Mar 2020</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Cart2Cart</div>
+                    <div class="vuln-type">$30 Bounty Reward</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Dec 2019</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Viator</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Feb 2020</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">The Hague Security Delta</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Nov 2019</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Klenty</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Mar 2020</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="company-name">Inveteck Global</div>
+                    <div class="vuln-type">Security Vulnerability</div>
+                    <div style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Oct 2019</div>
                 </div>
             </div>
         </div>
@@ -750,6 +896,24 @@
     <section id="projects" class="fade-in">
         <h2 class="section-title">Security Tools & Research</h2>
         <div class="project-grid">
+            <div class="project-card">
+                <h3 class="project-title">🔍 SKYSCAN</h3>
+                <p>Advanced passive subdomain discovery tool with 20+ sources, multi-threading, and smart filtering. Perfect for bug bounty hunters and penetration testers.</p>
+                <p style="color: var(--primary); margin-top: 1rem;">Features:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>20+ Passive Sources</li>
+                    <li>Multi-threading Support</li>
+                    <li>Smart Filtering & Deduplication</li>
+                </ul>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/rajeshsahan507/skyscan" target="_blank" class="btn" style="display: inline-block; padding: 0.5rem 1rem; font-size: 0.9rem;">View on GitHub</a>
+                </div>
+                <div class="project-tech">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Threading</span>
+                    <span class="tech-badge">OSINT</span>
+                </div>
+            </div>
             <div class="project-card">
                 <h3 class="project-title">🔍 Network Scanner Tool</h3>
                 <p>Advanced Python-based network reconnaissance tool with multi-threading support, 10x faster than traditional scanners.</p>
@@ -850,6 +1014,96 @@
             </div>
         </div>
     </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="fade-in">
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"There is no better cybersecurity researcher in the world. Rajesh is one of the most dedicated professionals I've worked with and is willing to go the extra mile to help you when needed. His expertise as Cyber Security Analyst is considerable and it helped our team to come up with more efficient solutions and secure different projects."</p>
+                <p class="testimonial-author">Rishabh Goyal</p>
+                <p class="testimonial-role">Information Security Engineer at Astra Security</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I always try to find out great talent in the market and Rajesh is one of them. When he was interviewed by the panel he was nervous but I knew about his talent and his capabilities on the VAPT side. Great to see him at Indusface he is upscaling his knowledge and potential day by day and he is best in his business. Great Work Buddy. Keep it up and raise high in your career."</p>
+                <p class="testimonial-author">Sankha Goswami</p>
+                <p class="testimonial-role">Security Professional</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Rajesh is a guy with a strong technical understanding of cybersecurity stuff. He has a clear approach towards problem-solving and a strong passion for information security, research, and penetration testing."</p>
+                <p class="testimonial-author">Navdeep Singh</p>
+                <p class="testimonial-role">DevSecOps | AppSec | Cloud Sec | Ex- Sage, Meesho</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"One of the most dedicated and hard working intern I have seen, Rajesh has potential and passion which makes working with him a bliss."</p>
+                <p class="testimonial-author">Mudit Budhiraja</p>
+                <p class="testimonial-role">Security Architect | OSCP | CEH</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Rajesh is a nice team player and a quick learner. Just guide him a bit and he can do rest. He is always going to be an asset for any company he works in."</p>
+                <p class="testimonial-author">Mohit Yadav</p>
+                <p class="testimonial-role">CEO @ Craw Security</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="fade-in">
+        <h2 class="section-title">Certifications & Training</h2>
+        <div class="certifications-grid">
+            <div class="cert-card">
+                <div class="cert-name">Certified Ethical Hacker (CEH)</div>
+                <div class="cert-issuer">EC-Council | 2021</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">CNSS - Certified Network Security Specialist</div>
+                <div class="cert-issuer">ICSI | May 2020 | ID: 17449924</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">Certified AppSec Practitioner (CAP)</div>
+                <div class="cert-issuer">The SecOps Group | Dec 2022 | ID: 6847166</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">ISO/IEC 27001 Information Security Associate</div>
+                <div class="cert-issuer">SkillFront | May 2022 | ID: 04665005038166</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">Android Bug Bounty Hunter: Hunt Like a Rat</div>
+                <div class="cert-issuer">EC-Council | Feb 2023 | ID: 203783</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">Ransomware Uncovered - Specialist Certificate</div>
+                <div class="cert-issuer">ICTTF | Feb 2023</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">API Security Testing Guide</div>
+                <div class="cert-issuer">Udemy | Dec 2021</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">Hacking and Pentesting iOS Applications</div>
+                <div class="cert-issuer">Udemy | Jul 2022</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">Blockchain and Smart Contracts Security</div>
+                <div class="cert-issuer">LinkedIn | Dec 2022</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">Offensive Approach to Hunt Bugs</div>
+                <div class="cert-issuer">HackersEra | Apr 2022</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">XSS Survival Guide</div>
+                <div class="cert-issuer">Udemy | Jul 2021</div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-name">15+ Other Specialized Certifications</div>
+                <div class="cert-issuer">Various Platforms | 2019-2023</div>
+            </div>
+        </div>
 
     <!-- Contact Section -->
     <section id="contact" class="fade-in">
